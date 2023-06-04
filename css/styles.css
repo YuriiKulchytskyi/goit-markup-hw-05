@@ -160,6 +160,8 @@ ul {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--text);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 /* .phone {
@@ -227,6 +229,8 @@ nav li a:focus {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border: none;
     border-radius: 4px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .order-button:hover,
@@ -382,6 +386,8 @@ nav li a:focus {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .soc-a:hover,
@@ -397,6 +403,10 @@ nav li a:focus {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.a-soc-footer {
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer .a-soc-footer:hover {
@@ -462,6 +472,8 @@ nav li a:focus {
     align-items: center;
     justify-content: center;
     color: var(--subtle-text);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 /* .width-height {
@@ -587,6 +599,10 @@ nav li a:focus {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.04em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .buttons {
@@ -620,11 +636,14 @@ nav li a:focus {
 
 .application {
     display: block;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .application:hover,
 .application:focus {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    transform: translateY(0%);
+
 }
 
 .type {
@@ -696,7 +715,7 @@ nav li a:focus {
     top: 0;
     left: 0;
     width: 100%;
-    height: 300px;
+    height: 100%;
     padding: 32px 40px 164px 32px;
     color: var(--light);
     background-color: var(--brand-color);
@@ -717,13 +736,19 @@ nav li a:focus {
 
 
 .studio {
-    color: var(--pressed-state);
-    border-bottom: 4px solid var(--pressed-state);
-    border-radius: 2px;
+    position: relative;
 }
 
-.studio::after {
+.studio::after,
+.folio::after {
     content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 4px;
+    background-color: var(--pressed-state);
+    border-radius: 2px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .folio {
@@ -732,20 +757,25 @@ nav li a:focus {
     border-radius: 2px;
 }
 
+
 .backdrop {
     position: fixed;
     width: 100%;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
     top: 0;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal {
     position: absolute;
-    margin-left: 516px;
-    top: 80px;
+    /* margin-left: 516px; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
     width: 408px;
-    height: 584px;
+    min-height: 584px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     padding-top: 24px;
     background-color: var(--modal-background);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -753,9 +783,11 @@ nav li a:focus {
 }
 
 .cross {
-    margin-left: 360px;
-    /* margin-top: 24px; */
+    position: absolute;
+    right: 24px;
+    top: 24px;
     display: flex;
+    padding: 0;
     justify-content: center;
     align-items: center;
     width: 24px;
@@ -763,16 +795,25 @@ nav li a:focus {
     background-color: var(--accent);
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
+    cursor: pointer;
+}
+
+.cross:hover,
+.cross:focus {
+    border: none;
+    background-color: var(--pressed-state);
+    fill: var(--white-background);
 }
 
 .cross-svg {
+    fill: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     width: 8px;
     height: 8px;
 }
 
 
 .is-hidden {
-    visibility: 0;
+    visibility: hidden;
     opacity: 0;
     pointer-events: none;
 }
