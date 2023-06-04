@@ -386,6 +386,7 @@ nav li a:focus {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 
 }
@@ -471,7 +472,8 @@ nav li a:focus {
     align-items: center;
     justify-content: center;
     color: var(--subtle-text);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    /* transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -720,7 +722,7 @@ nav li a:focus {
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 32px 40px 164px 32px;
+    padding: 40px 32px;
     color: var(--light);
     background-color: var(--brand-color);
     font-size: 16px;
