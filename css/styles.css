@@ -386,13 +386,14 @@ nav li a:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 
 }
 
-.soc-a:hover,
+.soc-a:hover ,
 .soc-a:focus {
     background-color: var(--pressed-state);
+
 }
 
 .soc-list-footer li a {
@@ -436,9 +437,7 @@ nav li a:focus {
 .rectangle {
     width: calc((100% - 120px) / 6);
     height: 88px;
-    /* border: 1px solid var(--subtle-text); */
-    /* border-radius: 4px; */
-    /* padding: 16px 32px; */
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .five {
@@ -600,9 +599,9 @@ nav li a:focus {
     line-height: 1.5;
     letter-spacing: 0.04em;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .buttons {
@@ -636,20 +635,25 @@ nav li a:focus {
 
 .application {
     display: block;
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .application:hover,
 .application:focus {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-    transform: translateY(0%);
+    /* transform: translateY(0%); */
 
 }
 
+.application:hover .type-cover-text,
+.application:focus .type-cover-text {
+    transform: translateY(0%);
+
+} 
+
 .type {
-    /* position: relative; */
     margin-right: 0px;
-    /* width: calc((100% - 48px) / 3); */
     border: 1px solid #E7E9FC;
 }
 
@@ -732,11 +736,13 @@ nav li a:focus {
     overflow: hidden;
 }
 
-@keyframes informator {}
+/* @keyframes informator {} */
 
 
 .studio {
+    color: var(--pressed-state);
     position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .studio::after,
@@ -748,19 +754,18 @@ nav li a:focus {
     height: 4px;
     background-color: var(--pressed-state);
     border-radius: 2px;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .folio {
     color: var(--pressed-state);
-    border-bottom: 4px solid var(--pressed-state);
-    border-radius: 2px;
+    position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
 .backdrop {
     position: fixed;
-    width: 100%;
+    width: 1440px;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
     top: 0;
@@ -796,6 +801,7 @@ nav li a:focus {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cross:hover,
@@ -806,7 +812,7 @@ nav li a:focus {
 }
 
 .cross-svg {
-    fill: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     width: 8px;
     height: 8px;
 }
